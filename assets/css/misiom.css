@@ -6608,7 +6608,7 @@ li:hover .sidebar__comments__icon {
   padding: 195px 0px 150px;
   position: relative;
   overflow: hidden;
-  background-color: var(--misiom-black, #18191c);
+  background-color: var(--misiom-white, #ffffff);
 }
 @media (max-width: 991px) {
   .hero-one {
@@ -6688,7 +6688,7 @@ li:hover .sidebar__comments__icon {
   font-size: 100px;
   line-height: 90px;
   font-weight: 500;
-  color: var(--misiom-white, #ffffff);
+  color: var(--misiom-black, #233142);
   text-transform: uppercase;
 }
 @media (max-width: 1399px) {
@@ -6725,7 +6725,7 @@ li:hover .sidebar__comments__icon {
   margin-bottom: 41px;
   font-family: var(--misiom-font, "Instrument Sans", sans-serif);
   font-size: 16px;
-  color: var(--misiom-white, #ffffff);
+  color: var(--misiom-text, #5e6d82);
   font-weight: 500;
   line-height: 1.875;
   font-weight: 600;
@@ -6770,7 +6770,7 @@ li:hover .sidebar__comments__icon {
   top: 66px;
   left: 0px;
   border-radius: 50%;
-  background-image: linear-gradient(90deg, rgb(15, 15, 15) 0%, rgba(15, 15, 15, 0) 100%);
+  background-image: radial-gradient(circle, rgba(194, 249, 71, 0.25) 0%, rgba(244, 247, 250, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
 }
 .hero-one__image__img {
   max-width: 100%;
@@ -6841,13 +6841,13 @@ li:hover .sidebar__comments__icon {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.333;
-  color: var(--misiom-white, #ffffff);
+  color: var(--misiom-black, #233142);
 }
 .hero-one__list__icon {
   position: relative;
   top: 1px;
   font-size: 16px;
-  color: var(--misiom-white, #ffffff);
+  color: var(--misiom-black, #233142);
 }
 .hero-one__list__icon svg {
   width: 1em;
@@ -6861,7 +6861,9 @@ li:hover .sidebar__comments__icon {
   bottom: 183px;
   z-index: 2;
   border-radius: 20px;
-  background-color: var(--misiom-black3, #000000);
+  background-color: var(--misiom-white, #ffffff);
+  border: 1px solid var(--misiom-border-color, #e2e8f0);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.06);
 }
 @media (max-width: 991px) {
   .hero-one__funfact {
@@ -6890,7 +6892,7 @@ li:hover .sidebar__comments__icon {
   font-size: 100px;
   line-height: 1;
   font-weight: 400;
-  color: var(--misiom-white, #ffffff);
+  color: var(--misiom-black, #233142);
   text-transform: uppercase;
 }
 .hero-one__funfact__shape {
@@ -6910,7 +6912,7 @@ li:hover .sidebar__comments__icon {
   padding: 192px 0px 66px;
   position: relative;
   overflow: hidden;
-  background-color: var(--misiom-black, #18191c);
+  background-color: var(--misiom-white, #ffffff);
 }
 @media (max-width: 767px) {
   .hero-two {
@@ -6950,7 +6952,7 @@ li:hover .sidebar__comments__icon {
   font-size: 180px;
   line-height: 140px;
   font-weight: 500;
-  color: var(--misiom-white, #ffffff);
+  color: var(--misiom-black, #233142);
   text-transform: uppercase;
 }
 @media (max-width: 1599px) {
@@ -7029,7 +7031,7 @@ li:hover .sidebar__comments__icon {
   font-size: 16px;
   font-weight: 600;
   line-height: 1.375;
-  color: var(--misiom-white, #ffffff);
+  color: var(--misiom-black, #233142);
   text-transform: uppercase;
 }
 @media (max-width: 480px) {
