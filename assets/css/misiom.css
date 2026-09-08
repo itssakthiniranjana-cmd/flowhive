@@ -8293,16 +8293,11 @@ li:hover .sidebar__comments__icon {
   font-size: 18px;
   font-weight: 500;
   line-height: 1.777;
-  color: var(--misiom-gray, #75767a);
-  padding: 24px 26px 38px;
-  border-radius: 20px;
-  background-color: var(--misiom-white2, #f1f3f5);
-  -webkit-mask: url("../images/shapes/testimonial-card-shape-1-1.png");
-  mask: url("../images/shapes/testimonial-card-shape-1-1.png");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
+  color: var(--misiom-gray, #5E6D82);
+  padding: 24px 26px;
+  border-radius: 16px;
+  background-color: var(--misiom-white2, #F4F7FA);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 .testimonials-one__card__info {
   display: flex;
