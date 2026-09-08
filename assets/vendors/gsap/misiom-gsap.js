@@ -1013,38 +1013,28 @@
     });
   }
 
-  // work process 01 pinned scrolling
-  const workProcess = document.querySelector("#workProcess");
-  const workProcessWrapper = document.querySelector("#workProcessWrapper");
-
-  function workProcessPinnedScrolling() {
-    if (!workProcess || !workProcessWrapper) return;
+  // work process 01 animation
+  function workProcessCardsAnimation() {
+    const workProcess = document.querySelector("#workProcess");
+    if (!workProcess) return;
+    const cards = workProcess.querySelectorAll(".work-process__card");
+    if (cards.length === 0) return;
 
     ScrollTrigger.getAll().forEach((trigger) => {
       if (trigger.trigger === workProcess) trigger.kill();
     });
 
-    mm.add("(min-width: 992px)", () => {
-      const wrapperHeight = workProcessWrapper.offsetHeight;
-
-      gsap.fromTo(
-        workProcessWrapper,
-        {
-          y: 0,
-        },
-        {
-          y: -wrapperHeight,
-          ease: "none",
-          scrollTrigger: {
-            trigger: workProcess,
-            start: "top top",
-            end: () => `+=${wrapperHeight}`,
-            scrub: true,
-            pin: true,
-            invalidateOnRefresh: true,
-          },
-        },
-      );
+    gsap.from(cards, {
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.18,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: workProcess,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
     });
   }
 
@@ -1265,7 +1255,7 @@
     bwItemFlipIn();
     testimonialsPinnedScrolling();
     initAwardsAnimation();
-    workProcessPinnedScrolling();
+    workProcessCardsAnimation();
     initWorkProcessAnimation();
     gridRevealAnim();
 
@@ -1273,7 +1263,7 @@
   });
 
   window.addEventListener("resize", () => {
-    workProcessPinnedScrolling();
+    workProcessCardsAnimation();
     ScrollTrigger.refresh();
   });
 
