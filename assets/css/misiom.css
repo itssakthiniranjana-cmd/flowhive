@@ -11202,27 +11202,30 @@ li:hover .sidebar__comments__icon {
   background-color: var(--misiom-white, #ffffff);
 }
 .portfolio-one__hover__serial {
-  font-size: 110px;
+  font-size: 100px;
   line-height: 1;
-  font-weight: 800;
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.85);
-  text-shadow: 0 0 30px rgba(0, 114, 206, 0.65);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 700;
+  color: var(--misiom-base, #0072CE);
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
   user-select: none;
 }
 .portfolio-one__hover:hover .portfolio-one__hover__serial {
-  -webkit-text-stroke: 2px var(--misiom-base, #0072CE);
-  text-shadow: 0 0 35px rgba(0, 114, 206, 0.9);
-  transform: scale(1.05);
+  color: var(--misiom-base, #0072CE);
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+  transform: none;
 }
 @media (max-width: 991px) {
   .portfolio-one__hover__serial {
     position: absolute !important;
-    top: 20px !important;
-    right: 20px !important;
-    font-size: 45px !important;
-    opacity: 0.65 !important;
+    top: 25px !important;
+    right: 25px !important;
+    font-size: 50px !important;
+    color: var(--misiom-base, #0072CE) !important;
+    text-shadow: none !important;
+    -webkit-text-stroke: 0 !important;
+    opacity: 1 !important;
     pointer-events: none !important;
   }
 }

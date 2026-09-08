@@ -671,8 +671,8 @@
 
         tl.fromTo(
           hoverEl.querySelectorAll(".portfolio-one__hover__serial"),
-          { y: 40, opacity: 0, scale: 0.85 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)" },
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
           "-=0.3",
         );
 
@@ -710,24 +710,6 @@
           activeParent.appendChild(activeHover);
         }
       };
-    });
-
-    mm.add("(max-width: 991px)", () => {
-      const readMoreLinks = document.querySelectorAll(
-        ".portfolio-one .portfolio-one__hover__btn a, .portfolio-one .misiom-btn, .portfolio-one__hover__title a, .portfolio-one__item__title a, .portfolio-one__item__rm",
-      );
-
-      readMoreLinks.forEach((link) => {
-        const handleNavigation = (e) => {
-          const href = link.getAttribute("href");
-          if (href && href !== "#") {
-            e.stopPropagation();
-            window.location.href = href;
-          }
-        };
-        link.addEventListener("click", handleNavigation);
-        link.addEventListener("touchend", handleNavigation);
-      });
     });
   }
 
