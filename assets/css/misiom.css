@@ -14568,6 +14568,8 @@ canvas {
     height: auto !important;
     overflow: visible !important;
     padding: 70px 0 80px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
   .work-process .container,
   .work-process .work-process__container {
@@ -14576,6 +14578,14 @@ canvas {
   }
   .work-process__top {
     margin-bottom: 35px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .work-process__text,
+  .bw-reveal-text,
+  .bw-reveal-text-2 {
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   .work-process__wrapper {
     position: relative !important;
@@ -14587,6 +14597,8 @@ canvas {
     width: 100% !important;
     padding: 0 !important;
     transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
   .work-process__wrapper::after {
     display: none !important;
@@ -14599,6 +14611,9 @@ canvas {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
   }
 }
 
@@ -14610,6 +14625,9 @@ canvas {
   .work-process__card {
     max-width: 440px !important;
     margin: 0 auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
   }
 }
 

@@ -165,12 +165,13 @@
       gsap.from(lines, {
         yPercent: 100,
         ease: "power3.out",
-        stagger: 0.25,
-        duration: 1,
-        delay: 0.2,
+        stagger: 0.2,
+        duration: 0.8,
         scrollTrigger: {
           trigger: el,
-          toggleActions: "restart none none reset",
+          start: "top 90%",
+          toggleActions: "play none none none",
+          once: true,
         },
       });
     };
@@ -1024,17 +1025,29 @@
       if (trigger.trigger === workProcess) trigger.kill();
     });
 
-    gsap.from(cards, {
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.18,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: workProcess,
-        start: "top 80%",
-        toggleActions: "play none none reverse",
-      },
+    mm.add("(min-width: 992px)", () => {
+      gsap.from(cards, {
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: workProcess,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      });
+    });
+
+    mm.add("(max-width: 991px)", () => {
+      gsap.set(cards, {
+        clearProps: "all",
+        opacity: 1,
+        visibility: "visible",
+        y: 0,
+      });
     });
   }
 
