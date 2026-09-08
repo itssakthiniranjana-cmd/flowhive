@@ -11774,13 +11774,9 @@ li:hover .sidebar__comments__icon {
   object-fit: cover;
   border-radius: inherit;
   transition: all 500ms ease;
-  filter: grayscale(0%) sepia(0%) hue-rotate(0deg) saturate(0%);
 }
 .service-card:hover .service-card__image {
   height: 158px;
-}
-.service-card:hover .service-card__image img {
-  filter: none;
 }
 
 .service-card-two {
@@ -11937,19 +11933,18 @@ li:hover .sidebar__comments__icon {
   }
 }
 .service-card-two__object {
+  width: 130px;
+  height: 130px;
   max-width: 100%;
-  height: auto;
-  margin-bottom: 38px;
-  transition: all 500ms ease;
-  filter: grayscale(0%) sepia(0%) hue-rotate(0deg) saturate(0%);
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 28px;
+  transition: all 400ms ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 .service-card-two.active .service-card-two__object, .service-card-two:hover .service-card-two__object {
-  filter: none;
-}
-@media (max-width: 1399px) {
-  .service-card-two.active .service-card-two__object {
-    filter: grayscale(0%) sepia(0%) hue-rotate(0deg) saturate(0%);
-  }
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 14px 30px rgba(0, 114, 206, 0.2);
 }
 .service-card-two__title {
   padding-bottom: 21px;
