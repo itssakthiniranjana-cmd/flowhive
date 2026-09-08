@@ -962,27 +962,29 @@
   function testimonialsPinnedScrolling() {
     if (!section || !container || !wrapper) return;
 
-    const screenHeight = window.innerHeight;
+    mm.add("(min-width: 992px)", () => {
+      const screenHeight = window.innerHeight;
 
-    const containerStyle = window.getComputedStyle(container);
-    const paddingBottom = parseInt(containerStyle.paddingBottom) || 0;
+      const containerStyle = window.getComputedStyle(container);
+      const paddingBottom = parseInt(containerStyle.paddingBottom) || 0;
 
-    const wrapperHeight = wrapper.getBoundingClientRect().height;
+      const wrapperHeight = wrapper.getBoundingClientRect().height;
 
-    const finalY =
-      wrapperHeight + screenHeight - (screenHeight - paddingBottom);
+      const finalY =
+        wrapperHeight + screenHeight - (screenHeight - paddingBottom);
 
-    gsap.to(wrapper, {
-      y: -finalY,
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: () => `+=${finalY}`,
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-      },
+      gsap.to(wrapper, {
+        y: -finalY,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => `+=${finalY}`,
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
     });
   }
 
@@ -1022,30 +1024,28 @@
       if (trigger.trigger === workProcess) trigger.kill();
     });
 
-    const wrapperHeight = workProcessWrapper.offsetHeight;
+    mm.add("(min-width: 992px)", () => {
+      const wrapperHeight = workProcessWrapper.offsetHeight;
 
-    gsap.fromTo(
-      workProcessWrapper,
-      {
-        y: 0,
-      },
-      {
-        y: -wrapperHeight,
-
-        ease: "none",
-
-        scrollTrigger: {
-          trigger: workProcess,
-          start: "top top",
-
-          end: () => `+=${wrapperHeight}`,
-
-          scrub: true,
-          pin: true,
-          invalidateOnRefresh: true,
+      gsap.fromTo(
+        workProcessWrapper,
+        {
+          y: 0,
         },
-      },
-    );
+        {
+          y: -wrapperHeight,
+          ease: "none",
+          scrollTrigger: {
+            trigger: workProcess,
+            start: "top top",
+            end: () => `+=${wrapperHeight}`,
+            scrub: true,
+            pin: true,
+            invalidateOnRefresh: true,
+          },
+        },
+      );
+    });
   }
 
   // word process 02 animation

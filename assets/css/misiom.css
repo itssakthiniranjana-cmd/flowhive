@@ -14479,35 +14479,82 @@ canvas {
 }
 
 /* 3. Header & Navigation Mobile Optimizations */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .main-header {
-    top: 15px;
+    top: 15px !important;
+    position: absolute !important;
+    width: 100% !important;
+    z-index: 999 !important;
   }
-  .main-header__right {
-    padding: 10px 18px;
+  .main-header__container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
-  .main-header .sidebar-btn__toggler {
-    margin-left: 20px;
+  .main-header__inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .main-header__left {
+    gap: 0 !important;
+    align-items: center !important;
   }
   .main-header__logo img {
-    max-width: 135px;
-    height: auto;
+    max-width: 140px !important;
+    height: auto !important;
+  }
+  .main-header__right {
+    display: flex !important;
+    align-items: center !important;
+    padding: 8px 16px !important;
+    border-radius: 50px !important;
+    background-color: var(--flowhive-header-gray, #344252) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    gap: 10px !important;
+  }
+  .main-header__search {
+    display: none !important;
+  }
+  .main-header .sidebar-btn__toggler {
+    display: none !important; /* Hide secondary sidebar toggler on mobile to make hamburger cleanly centered */
+  }
+  .mobile-nav__btn {
+    display: flex !important;
+    width: 26px !important;
+    height: 20px !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    cursor: pointer !important;
+  }
+  .mobile-nav__btn span {
+    width: 100% !important;
+    height: 2.5px !important;
+    border-radius: 2px !important;
+    background-color: #ffffff !important;
+    margin: 0 !important;
+  }
+  .sticky-header--cloned {
+    padding: 10px 0 !important;
+    background-color: rgba(35, 49, 66, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  }
+  .sticky-header--cloned .main-header__right {
+    padding: 8px 16px !important;
   }
 }
 
 @media (max-width: 480px) {
   .main-header {
-    top: 12px;
-  }
-  .main-header__right {
-    padding: 8px 14px;
-    gap: 12px;
-  }
-  .main-header .sidebar-btn__toggler {
-    margin-left: 14px;
+    top: 10px !important;
   }
   .main-header__logo img {
-    max-width: 120px;
+    max-width: 120px !important;
+  }
+  .main-header__right {
+    padding: 6px 12px !important;
   }
 }
 
@@ -14531,7 +14578,94 @@ canvas {
   touch-action: manipulation;
 }
 
-/* 4. Careers Page Mobile Optimizations */
+/* 4. Work Process Mobile Responsiveness & Natural Scroll */
+@media (max-width: 991px) {
+  .work-process {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 80px 0 90px !important;
+  }
+  .work-process .container,
+  .work-process .work-process__container {
+    height: auto !important;
+    position: relative !important;
+  }
+  .work-process__top {
+    margin-bottom: 40px !important;
+  }
+  .work-process__wrapper {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+  .work-process__wrapper::after {
+    display: none !important;
+  }
+  .work-process__left,
+  .work-process__right {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .work-process__card {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+/* 5. Testimonials Mobile Responsiveness & Smooth Scroll */
+@media (max-width: 991px) {
+  .testimonials-one {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 80px 0 90px !important;
+  }
+  .testimonials-one .container--pinned {
+    height: auto !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+  .testimonials-one__top {
+    margin-bottom: 30px !important;
+  }
+  .testimonials-one__row {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  .testimonials-one__card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .testimonials-one .card-center,
+  .testimonials-one .ms-auto {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* 6. Careers Page Mobile Optimizations */
 @media (max-width: 767px) {
   .job-filters {
     display: flex;
@@ -14594,7 +14728,7 @@ canvas {
   }
 }
 
-/* 5. Team Details Mobile Optimizations */
+/* 7. Team Details Mobile Optimizations */
 @media (max-width: 767px) {
   .team-details__inner {
     flex-direction: column;
@@ -14612,7 +14746,7 @@ canvas {
   }
 }
 
-/* 6. Tables & Checkout Responsiveness */
+/* 8. Tables & Checkout Responsiveness */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -14635,7 +14769,7 @@ canvas {
   }
 }
 
-/* 7. Footer Mobile Cleanliness */
+/* 9. Footer Mobile Cleanliness */
 @media (max-width: 767px) {
   .main-footer__middle {
     padding-bottom: 40px;
@@ -14649,4 +14783,5 @@ canvas {
     gap: 15px;
   }
 }
+
 
