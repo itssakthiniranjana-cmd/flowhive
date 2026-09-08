@@ -1237,12 +1237,13 @@
         ignoreMobileResize: false,
         onUpdate: (self) => {
           var st = self.scrollTop();
-          if (st > 100) {
-            $(".sticky-header--cloned").addClass("active");
-            $(".sticky-header--one-page").addClass("active");
-          } else {
-            $(".sticky-header--cloned").removeClass("active");
-            $(".sticky-header--one-page").removeClass("active");
+          var dir = self.direction; // 1 = scrolling down, -1 = scrolling up
+          if (st <= 60) {
+            $(".main-header").removeClass("header--hidden");
+          } else if (dir === 1 && st > 100) {
+            $(".main-header").addClass("header--hidden");
+          } else if (dir === -1) {
+            $(".main-header").removeClass("header--hidden");
           }
         },
       });

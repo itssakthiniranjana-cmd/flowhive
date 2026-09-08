@@ -694,22 +694,61 @@
     }
   }
 
-  // Universal Sticky Header Handler (All Devices & Viewports)
+  // Smart Scroll Header (Hide on Scroll Down, Show on Reverse Scroll Up)
   function initStickyHeader() {
-    function handleSticky() {
-      var st = $(window).scrollTop() || window.pageYOffset || document.documentElement.scrollTop || 0;
-      if (st > 100) {
-        $(".sticky-header--cloned").addClass("active");
-        $(".sticky-header--one-page").addClass("active");
-      } else {
-        $(".sticky-header--cloned").removeClass("active");
-        $(".sticky-header--one-page").removeClass("active");
+    var lastScrollTop = 0;
+    var threshold = 8;
+    var $header = $(".main-header");
+    var ticking = false;
+
+    function handleScroll() {
+      var currentScroll = window.pageYOffset || document.documentElement.scrollTop || $(window).scrollTop() || 0;
+      if (currentScroll < 0) currentScroll = 0;
+
+      // Always visible at the top of the page
+      if (currentScroll <= 60) {
+        $header.removeClass("header--hidden");
+        lastScrollTop = currentScroll;
+        return;
       }
+
+      // Check if threshold delta passed to prevent micro-jitter
+      if (Math.abs(lastScrollTop - currentScroll) <= threshold) {
+        return;
+      }
+
+      if (currentScroll > lastScrollTop && currentScroll > 120) {
+        // Scrolling DOWN -> Hide Header
+        $header.addClass("header--hidden");
+      } else if (currentScroll < lastScrollTop) {
+        // Scrolling UP (Reverse Scroll) -> Show Header
+        $header.removeClass("header--hidden");
+      }
+
+      lastScrollTop = currentScroll;
     }
 
-    $(window).on("scroll", handleSticky);
-    window.addEventListener("scroll", handleSticky, { passive: true });
-    handleSticky();
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    $(window).on("scroll", function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    handleScroll();
   }
   initStickyHeader();
 
@@ -786,14 +825,6 @@
     handleScrollbar();
 
     var st = $(window).scrollTop() || window.pageYOffset || document.documentElement.scrollTop || 0;
-    if (st > 100) {
-      $(".sticky-header--cloned").addClass("active");
-      $(".sticky-header--one-page").addClass("active");
-    } else {
-      $(".sticky-header--cloned").removeClass("active");
-      $(".sticky-header--one-page").removeClass("active");
-    }
-
     var scrollToTopBtn = ".scroll-to-top";
     if ($(scrollToTopBtn).length) {
       if (st > 500) {

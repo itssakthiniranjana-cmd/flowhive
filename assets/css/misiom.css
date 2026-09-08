@@ -2637,6 +2637,12 @@ One Line To Left */
   border-bottom: 1px solid #eef0f3 !important;
   padding: 14px 0px !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease !important;
+  transform: translateY(0);
+  will-change: transform;
+}
+.main-header.header--hidden {
+  transform: translateY(-115%) !important;
 }
 @media (max-width: 1199px) {
   .main-header {
