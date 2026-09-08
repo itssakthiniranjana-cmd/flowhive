@@ -10884,7 +10884,7 @@ li:hover .sidebar__comments__icon {
   right: 0;
   bottom: 0;
   background-color: var(--accent-color);
-  opacity: 0.9;
+  opacity: 0.5;
 }
 .portfolio-one__item__image img {
   width: 100%;
@@ -10955,7 +10955,7 @@ li:hover .sidebar__comments__icon {
 }
 .portfolio-one__hover {
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
   background-size: cover;
   position: absolute;
   opacity: 0;
@@ -10990,8 +10990,9 @@ li:hover .sidebar__comments__icon {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--accent-color);
-  opacity: 0.9;
+  background: linear-gradient(180deg, rgba(9, 10, 11, 0.45) 0%, rgba(9, 10, 11, 0.7) 100%);
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
 }
 .portfolio-one__hover__content {
   width: 100%;
@@ -11031,6 +11032,7 @@ li:hover .sidebar__comments__icon {
   line-height: 1.2;
   color: var(--misiom-white, #ffffff);
   text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 991px) {
   .portfolio-one__hover__title {
@@ -11074,6 +11076,7 @@ li:hover .sidebar__comments__icon {
   font-weight: 500;
   line-height: 1.625;
   color: var(--misiom-white2, #f1f3f5);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
 }
 @media (max-width: 480px) {
   .portfolio-one__hover__text {
@@ -11091,6 +11094,7 @@ li:hover .sidebar__comments__icon {
   line-height: 1;
   font-weight: 700;
   color: var(--misiom-base, #0072CE);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 767px) {
   .portfolio-one__hover__serial {
