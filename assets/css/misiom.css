@@ -2684,7 +2684,8 @@ One Line To Left */
 .main-header__nav {
   padding: 0px 46px 0px 30px;
   border-radius: 100px;
-  background-color: var(--misiom-black3, #000000);
+  background-color: var(--flowhive-header-gray, #344252);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 @media (max-width: 1199px) {
   .main-header__nav {
@@ -2697,7 +2698,8 @@ One Line To Left */
   justify-content: flex-end;
   padding: 15px 29px;
   border-radius: 100px;
-  background-color: var(--misiom-black3, #000000);
+  background-color: var(--flowhive-header-gray, #344252);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 @media (min-width: 1200px) and (max-width: 1299px) {
   .main-header__right {
@@ -2840,7 +2842,8 @@ One Line To Left */
   top: 0;
   visibility: hidden;
   transform: translateY(-100%);
-  background-color: var(--misiom-black3, #000000);
+  background-color: var(--flowhive-header-gray, #344252);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0px 3px 18px rgba(var(--misiom-black-rgb, 24, 25, 28), 0.07);
   transition: 0.6s cubic-bezier(0.24, 0.74, 0.58, 1);
   transition: transform 500ms ease, visibility 500ms ease;
@@ -2859,7 +2862,7 @@ One Line To Left */
   padding-bottom: 36px;
 }
 .sticky-header--cloned .main-header__right {
-  background-color: var(--misiom-black, #18191c);
+  background-color: var(--flowhive-header-gray, #344252);
 }
 
 .mobile-nav__btn {
@@ -3235,7 +3238,7 @@ body.megamenu-popup-active .mobile-nav__content {
   opacity: 0;
   visibility: hidden;
   transform: translateX(-100%);
-  background-color: var(--misiom-black, #18191c);
+  background-color: var(--flowhive-header-gray, #344252);
   transition: opacity 500ms ease 0ms, visibility 500ms ease 0ms, transform 500ms ease 0ms;
 }
 .mobile-nav__content .main-menu__nav {
