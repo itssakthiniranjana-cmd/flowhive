@@ -38,13 +38,13 @@ A replica of the **Misiom** Digital Agency & Creative Services template in **Lig
 
 The website visual system directly reflects the **Flowhive - Supply Chain Solutions** identity:
 
-| Token | Hex Value | Color Swatch | Usage & Psychology |
+| Token | Hex Value | Color Swatch | Usage & Role |
 | :--- | :--- | :--- | :--- |
-| `--misiom-base` / `--flowhive-lime` | `#C2F947` | 🟩 Electric Lime | **Primary Accent**: Primary CTA buttons, interactive hover borders, active navigation links, slider pagination, animated icons, and focus highlights. High-energy vibrant cyber lime green. |
-| `--flowhive-blue` | `#0084FF` | 🟦 Electric Azure | **Secondary Tech Accent**: Complements the lime accent matching the logo droplet transition (`#0084FF` ➔ `#C2F947`). |
+| `--misiom-base` / `--flowhive-primary` | `#0072CE` | 🟦 Flowhive Blue | **Primary Brand Color**: Primary CTA buttons (`.misiom-btn`), active links, navigation active states, search submit button, primary icons, and core brand styling. |
+| `--flowhive-accent` / `--flowhive-lime` | `#C2F947` | 🟩 Electric Lime | **Accent Color**: Feature badges, hero feature pill, button hover indicators, pricing discount tags, and linear gradient highlights (`#0072CE` ➔ `#C2F947`). |
 | `--misiom-black` | `#233142` | ⬛ Deep Charcoal Navy | **Headings & High-Contrast Typography**: Matches the deep slate tone of the `flowhive` wordmark. |
-| `--misiom-text` | `#5e6d82` | 🔘 Slate Gray | **Body Typography**: Soft readability matching the `Supply Chain Solutions` descriptor tone. |
-| `--misiom-white` | `#ffffff` | ⬜ Pure White | **Primary Surface**: Clean background for high-contrast light mode cards. |
+| `--misiom-text` | `#5e6d82` | 🔘 Slate Gray | **Body Typography**: Clean readability matching the `Supply Chain Solutions` descriptor tone. |
+| `--misiom-white` | `#ffffff` | ⬜ Pure White | **Primary Surface**: Clean background for high-contrast light mode cards and hero section. |
 | `--misiom-white2` | `#f4f7fa` | ◽ Cool Off-White | **Section Contrast**: Subtle backgrounds for feature blocks and alternating rows. |
 | `--misiom-border-color` | `#e2e8f0` | ◽ Soft Border | **Dividers & Card Outlines**: Ultra-clean crisp container framing. |
 
