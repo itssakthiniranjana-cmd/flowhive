@@ -544,164 +544,191 @@
 
   // portfolio hover animatiom
   function initPortfolioHover() {
-    const items = document.querySelectorAll(".portfolio-one .item");
     const carousel = document.querySelector(".portfolio-one__carousel");
+    if (!carousel) return;
 
-    let activeHover = null;
-    let activeParent = null;
-    let isAnimating = false;
-    let closeTimer = null;
+    let mm = gsap.matchMedia();
 
-    function getContainerRect() {
-      const el =
-        document.querySelector(".portfolio-one__carousel .owl-stage-outer") ||
-        carousel;
-      return el.getBoundingClientRect();
-    }
+    mm.add("(min-width: 992px)", () => {
+      const items = document.querySelectorAll(".portfolio-one .item");
+      let activeHover = null;
+      let activeParent = null;
+      let isAnimating = false;
+      let closeTimer = null;
 
-    function forceClose() {
-      if (!activeHover) return;
+      function getContainerRect() {
+        const el =
+          document.querySelector(".portfolio-one__carousel .owl-stage-outer") ||
+          carousel;
+        return el.getBoundingClientRect();
+      }
 
-      if (closeTimer) clearTimeout(closeTimer);
+      function forceClose() {
+        if (!activeHover) return;
 
-      isAnimating = true;
+        if (closeTimer) clearTimeout(closeTimer);
 
-      const triggerEl = activeParent.querySelector(".portfolio-one__item");
-      const containerRect = getContainerRect();
-      const itemRect = triggerEl.getBoundingClientRect();
+        isAnimating = true;
 
-      const title = activeHover.querySelectorAll(
-        ".portfolio-one__hover__title",
-      );
-      const serial = activeHover.querySelectorAll(
-        ".portfolio-one__hover__serial",
-      );
-      const text = activeHover.querySelectorAll(".portfolio-one__hover__text");
-      const btn = activeHover.querySelectorAll(".portfolio-one__hover__btn");
+        const triggerEl = activeParent.querySelector(".portfolio-one__item");
+        const containerRect = getContainerRect();
+        const itemRect = triggerEl.getBoundingClientRect();
 
-      const tl = gsap.timeline({
-        onComplete: () => {
-          gsap.set(activeHover, {
-            visibility: "hidden",
-            pointerEvents: "none",
-          });
+        const title = activeHover.querySelectorAll(
+          ".portfolio-one__hover__title",
+        );
+        const serial = activeHover.querySelectorAll(
+          ".portfolio-one__hover__serial",
+        );
+        const text = activeHover.querySelectorAll(".portfolio-one__hover__text");
+        const btn = activeHover.querySelectorAll(".portfolio-one__hover__btn");
 
-          activeParent.appendChild(activeHover);
+        const tl = gsap.timeline({
+          onComplete: () => {
+            gsap.set(activeHover, {
+              visibility: "hidden",
+              pointerEvents: "none",
+            });
 
-          activeHover = null;
-          activeParent = null;
-          isAnimating = false;
-        },
-      });
+            activeParent.appendChild(activeHover);
 
-      tl.to([btn, text, serial, title], {
-        y: 30,
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in",
-        stagger: 0.02,
-      });
+            activeHover = null;
+            activeParent = null;
+            isAnimating = false;
+          },
+        });
 
-      tl.to(
-        activeHover,
-        {
+        tl.to([btn, text, serial, title], {
+          y: 30,
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.in",
+          stagger: 0.02,
+        });
+
+        tl.to(
+          activeHover,
+          {
+            top: itemRect.top - containerRect.top,
+            left: itemRect.left - containerRect.left,
+            width: itemRect.width,
+            height: itemRect.height,
+            duration: 0.55,
+            ease: "power3.inOut",
+          },
+          "-=0.1",
+        );
+      }
+
+      function openPortfolio(item) {
+        if (activeHover || isAnimating) return;
+
+        isAnimating = true;
+
+        const hoverEl = item.querySelector(".portfolio-one__hover");
+        const triggerEl = item.querySelector(".portfolio-one__item");
+
+        const containerRect = getContainerRect();
+        const itemRect = triggerEl.getBoundingClientRect();
+
+        activeHover = hoverEl;
+        activeParent = item;
+
+        carousel.appendChild(hoverEl);
+
+        gsap.set(hoverEl, {
+          visibility: "visible",
+          pointerEvents: "auto",
+          position: "absolute",
           top: itemRect.top - containerRect.top,
           left: itemRect.left - containerRect.left,
           width: itemRect.width,
           height: itemRect.height,
-          duration: 0.55,
-          ease: "power3.inOut",
-        },
-        "-=0.1",
-      );
-    }
+          opacity: 1,
+        });
 
-    function openPortfolio(item) {
-      if (activeHover || isAnimating) return;
+        const tl = gsap.timeline({
+          onComplete: () => {
+            isAnimating = false;
+          },
+        });
 
-      isAnimating = true;
+        tl.to(hoverEl, {
+          top: 0,
+          left: 0,
+          width: containerRect.width,
+          height: containerRect.height,
+          duration: 0.7,
+          ease: "power3.out",
+        });
 
-      const hoverEl = item.querySelector(".portfolio-one__hover");
-      const triggerEl = item.querySelector(".portfolio-one__item");
+        tl.fromTo(
+          hoverEl.querySelectorAll(".portfolio-one__hover__title"),
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+          "-=0.35",
+        );
 
-      const containerRect = getContainerRect();
-      const itemRect = triggerEl.getBoundingClientRect();
+        tl.fromTo(
+          hoverEl.querySelectorAll(".portfolio-one__hover__serial"),
+          { y: 40, opacity: 0, scale: 0.85 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)" },
+          "-=0.3",
+        );
 
-      activeHover = hoverEl;
-      activeParent = item;
+        tl.fromTo(
+          hoverEl.querySelectorAll(".portfolio-one__hover__text"),
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+          "-=0.25",
+        );
 
-      carousel.appendChild(hoverEl);
+        tl.fromTo(
+          hoverEl.querySelectorAll(".portfolio-one__hover__btn"),
+          { y: 40, opacity: 0, scale: 0.9 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)" },
+          "-=0.2",
+        );
+      }
 
-      gsap.set(hoverEl, {
-        visibility: "visible",
-        pointerEvents: "auto",
-        position: "absolute",
-        top: itemRect.top - containerRect.top,
-        left: itemRect.left - containerRect.left,
-        width: itemRect.width,
-        height: itemRect.height,
-        opacity: 1,
+      items.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          if (closeTimer) clearTimeout(closeTimer);
+          openPortfolio(item);
+        });
       });
 
-      const tl = gsap.timeline({
-        onComplete: () => {
-          isAnimating = false;
-        },
-      });
-
-      tl.to(hoverEl, {
-        top: 0,
-        left: 0,
-        width: containerRect.width,
-        height: containerRect.height,
-        duration: 0.7,
-        ease: "power3.out",
-      });
-
-      tl.fromTo(
-        hoverEl.querySelectorAll(".portfolio-one__hover__title"),
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
-        "-=0.35",
-      );
-
-      tl.fromTo(
-        hoverEl.querySelectorAll(".portfolio-one__hover__serial"),
-        { y: 40, opacity: 0, scale: 0.85 },
-        { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)" },
-        "-=0.3",
-      );
-
-      tl.fromTo(
-        hoverEl.querySelectorAll(".portfolio-one__hover__text"),
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
-        "-=0.25",
-      );
-
-      tl.fromTo(
-        hoverEl.querySelectorAll(".portfolio-one__hover__btn"),
-        { y: 40, opacity: 0, scale: 0.9 },
-        { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)" },
-        "-=0.2",
-      );
-    }
-
-    items.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        if (closeTimer) clearTimeout(closeTimer);
-        openPortfolio(item);
-      });
-    });
-
-    if (carousel) {
       carousel.addEventListener("mouseleave", () => {
         if (closeTimer) clearTimeout(closeTimer);
         closeTimer = setTimeout(() => {
           forceClose();
         }, 50);
       });
-    }
+
+      return () => {
+        if (activeHover && activeParent) {
+          activeParent.appendChild(activeHover);
+        }
+      };
+    });
+
+    mm.add("(max-width: 991px)", () => {
+      const readMoreLinks = document.querySelectorAll(
+        ".portfolio-one .portfolio-one__hover__btn a, .portfolio-one .misiom-btn, .portfolio-one__hover__title a, .portfolio-one__item__title a, .portfolio-one__item__rm",
+      );
+
+      readMoreLinks.forEach((link) => {
+        const handleNavigation = (e) => {
+          const href = link.getAttribute("href");
+          if (href && href !== "#") {
+            e.stopPropagation();
+            window.location.href = href;
+          }
+        };
+        link.addEventListener("click", handleNavigation);
+        link.addEventListener("touchend", handleNavigation);
+      });
+    });
   }
 
   // portfolio panel pin scrolling
