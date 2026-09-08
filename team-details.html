@@ -110,11 +110,11 @@
                     <div class="page-header__bg image-parallax-lr" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div>
                     <div class="container">
                         <div class="page-header__content hidden">
-                            <h1 class="page-header__title" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">Team Details</h1>
+                            <h1 class="page-header__title" id="team-member-h1" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">Christine Rose</h1>
                             <ul class="misiom-breadcrumb list-unstyled" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="team.html"><span>Our Team</span></a></li>
-                                <li><span>Christine Rose</span></li>
+                                <li><span id="team-member-breadcrumb">Christine Rose</span></li>
                             </ul><!-- /.misiom-breadcrumb -->
                         </div><!-- /.page-header__content -->
                     </div><!-- /.container -->
@@ -126,14 +126,14 @@
                         <div class="row gutter-y-30">
                             <div class="col-lg-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                                 <div class="team-details__image grid-reveal-anim">
-                                    <img src="assets/images/team/team-d-1.jpg" alt="Christine Rose" data-animate="true" class="grid-reveal-anim-img">
+                                    <img id="team-member-img" src="assets/images/team/team-d-1.jpg" alt="Christine Rose" data-animate="true" class="grid-reveal-anim-img">
                                 </div><!-- /.team-details__image -->
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                 <div class="team-details__content">
                                     <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                                        <h2 class="team-details__name">Christine Rose</h2>
-                                        <p class="team-details__designation">CEO & Founder</p>
+                                        <h2 class="team-details__name" id="team-member-name">Christine Rose</h2>
+                                        <p class="team-details__designation" id="team-member-designation">CEO & Founder</p>
                                     </div>
                                     <div class="social-links" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                                         <a href="https://facebook.com">
@@ -161,7 +161,7 @@
                                             </span>
                                         </a>
                                     </div><!-- /.social-links -->
-                                    <p class="team-details__about" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">Christine Rose is a visionary CEO & Founder, leading innovative strategies, building strong teams, and driving business growth with creativity, passion, and strong leadership skills.</p>
+                                    <p class="team-details__about" id="team-member-about" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">Christine Rose is a visionary CEO & Founder, leading innovative strategies, building strong teams, and driving business growth with creativity, passion, and strong leadership skills.</p>
                                     <div class="team-details__info">
                                         <h3 class="team-details__info__title" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">Few reasons for hiring a expert</h3>
                                         <ul class="team-details__info__list list-unstyled" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
@@ -604,6 +604,112 @@
 
     <!-- template js -->
     <script src="assets/js/misiom.js"></script>
+    <script>
+        (function () {
+            const teamData = {
+                'thomas-adison': {
+                    name: 'Thomas Adison',
+                    designation: 'Co Founder',
+                    image: 'assets/images/team/team-1-1.jpg',
+                    about: 'Thomas Adison is a passionate Co-Founder with deep expertise in supply chain architecture, logistics innovation, and digital product scaling across international markets.',
+                    skills: [
+                        { title: 'Logistics Architecture', percent: '94%' },
+                        { title: 'Strategic Operations', percent: '88%' },
+                        { title: 'Brand Scaling', percent: '85%' }
+                    ]
+                },
+                'christine-rose': {
+                    name: 'Christine Rose',
+                    designation: 'CEO & Founder',
+                    image: 'assets/images/team/team-d-1.jpg',
+                    about: 'Christine Rose is a visionary CEO & Founder, leading innovative strategies, building strong teams, and driving business growth with creativity, passion, and strong leadership skills.',
+                    skills: [
+                        { title: 'Marketing', percent: '82%' },
+                        { title: 'Development', percent: '91%' },
+                        { title: 'Visual Artist', percent: '85%' }
+                    ]
+                },
+                'kevin-martin': {
+                    name: 'Kevin Martin',
+                    designation: 'Marketer',
+                    image: 'assets/images/team/team-1-3.jpg',
+                    about: 'Kevin Martin oversees global growth marketing, brand communications, and customer acquisition campaigns across multi-channel supply chain networks.',
+                    skills: [
+                        { title: 'Growth Marketing', percent: '92%' },
+                        { title: 'Campaign Strategy', percent: '86%' },
+                        { title: 'Data Analytics', percent: '80%' }
+                    ]
+                },
+                'linda-clark': {
+                    name: 'Linda Clark',
+                    designation: 'Designer',
+                    image: 'assets/images/team/team-1-4.jpg',
+                    about: 'Linda Clark crafts intuitive enterprise UI/UX experiences, modern design systems, and visual brand identities for high-growth digital platforms.',
+                    skills: [
+                        { title: 'UI/UX Design', percent: '95%' },
+                        { title: 'Brand Identity', percent: '90%' },
+                        { title: 'Prototyping', percent: '88%' }
+                    ]
+                },
+                'adlof-carr': {
+                    name: 'Adlof Carr',
+                    designation: 'Developer',
+                    image: 'assets/images/team/team-1-5.jpg',
+                    about: 'Adlof Carr engineers robust cloud infrastructure, full-stack web platforms, and automated workflow integrations with state-of-the-art tech stacks.',
+                    skills: [
+                        { title: 'Full-Stack Development', percent: '96%' },
+                        { title: 'Cloud Infrastructure', percent: '90%' },
+                        { title: 'API Integration', percent: '93%' }
+                    ]
+                },
+                'judith-white': {
+                    name: 'Judith White',
+                    designation: 'Director',
+                    image: 'assets/images/team/team-1-6.jpg',
+                    about: 'Judith White directs strategic operations, enterprise partnerships, and operational excellence across global logistics and tech initiatives.',
+                    skills: [
+                        { title: 'Operations Management', percent: '92%' },
+                        { title: 'Enterprise Partnerships', percent: '89%' },
+                        { title: 'Leadership', percent: '94%' }
+                    ]
+                }
+            };
+
+            const params = new URLSearchParams(window.location.search);
+            let memberId = params.get('id') || params.get('name') || '';
+            if (!memberId && window.location.hash) {
+                memberId = window.location.hash.replace('#', '');
+            }
+            memberId = memberId.toLowerCase().replace(/\s+/g, '-');
+
+            const member = teamData[memberId] || teamData['christine-rose'];
+
+            if (member) {
+                const h1 = document.getElementById('team-member-h1');
+                if (h1) h1.textContent = member.name;
+
+                const breadcrumb = document.getElementById('team-member-breadcrumb');
+                if (breadcrumb) breadcrumb.textContent = member.name;
+
+                const nameEl = document.getElementById('team-member-name');
+                if (nameEl) nameEl.textContent = member.name;
+
+                const desigEl = document.getElementById('team-member-designation');
+                if (desigEl) desigEl.textContent = member.designation;
+
+                const aboutEl = document.getElementById('team-member-about');
+                if (aboutEl) aboutEl.textContent = member.about;
+
+                const imgEl = document.getElementById('team-member-img');
+                if (imgEl) {
+                    imgEl.src = member.image;
+                    imgEl.alt = member.name;
+                }
+
+                document.title = member.name + ' || Flowhive Team';
+            }
+        })();
+    </script>
 </body>
 
 </html>
