@@ -1232,6 +1232,16 @@
         effects: true,
         smoothTouch: 0.1,
         ignoreMobileResize: false,
+        onUpdate: (self) => {
+          var st = self.scrollTop();
+          if (st > 100) {
+            $(".sticky-header--cloned").addClass("active");
+            $(".sticky-header--one-page").addClass("active");
+          } else {
+            $(".sticky-header--cloned").removeClass("active");
+            $(".sticky-header--one-page").removeClass("active");
+          }
+        },
       });
     }
 

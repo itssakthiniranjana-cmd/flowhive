@@ -454,7 +454,7 @@
     mobileNavContainer.innerHTML = navContent;
   }
 
-  if ($(".sticky-header").length) {
+  if ($(".sticky-header").length && !$(".sticky-header--cloned").length) {
     $(".sticky-header")
       .clone()
       .insertAfter(".sticky-header")
@@ -484,7 +484,7 @@
   }
 
   if ($(".mobile-nav__toggler").length) {
-    $(".mobile-nav__toggler").on("click", function (e) {
+    $(document).on("click", ".mobile-nav__toggler", function (e) {
       e.preventDefault();
       $(".mobile-nav__wrapper").toggleClass("expanded");
       $("body").toggleClass("locked");
@@ -694,32 +694,24 @@
     }
   }
 
-  // window scroll event
-  function stickyMenuUpScroll($targetMenu, $toggleClass) {
-    var lastScrollTop = 0;
-    window.addEventListener(
-      "scroll",
-      function () {
-        var st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > 500) {
-          if (st > lastScrollTop) {
-            // downscroll code
-            $targetMenu.removeClass($toggleClass);
-            // console.log("down");
-          } else {
-            // upscroll code
-            $targetMenu.addClass($toggleClass);
-            // console.log("up");
-          }
-        } else {
-          $targetMenu.removeClass($toggleClass);
-        }
-        lastScrollTop = st;
-      },
-      false
-    );
+  // Universal Sticky Header Handler (All Devices & Viewports)
+  function initStickyHeader() {
+    function handleSticky() {
+      var st = $(window).scrollTop() || window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (st > 100) {
+        $(".sticky-header--cloned").addClass("active");
+        $(".sticky-header--one-page").addClass("active");
+      } else {
+        $(".sticky-header--cloned").removeClass("active");
+        $(".sticky-header--one-page").removeClass("active");
+      }
+    }
+
+    $(window).on("scroll", handleSticky);
+    window.addEventListener("scroll", handleSticky, { passive: true });
+    handleSticky();
   }
-  stickyMenuUpScroll($(".sticky-header--normal"), "active");
+  initStickyHeader();
 
   //Strech Column
   function misiom_stretch() {
@@ -786,24 +778,25 @@
     priceFilter();
     initWebglHover();
     AOS.init();
+    initStickyHeader();
   });
 
   $(window).on("scroll", function () {
     OnePageMenuScroll();
     handleScrollbar();
-    if ($(".sticky-header--one-page").length) {
-      var headerScrollPos = 130;
-      var stricky = $(".sticky-header--one-page");
-      if ($(window).scrollTop() > headerScrollPos) {
-        stricky.addClass("active");
-      } else if ($(this).scrollTop() <= headerScrollPos) {
-        stricky.removeClass("active");
-      }
+
+    var st = $(window).scrollTop() || window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (st > 100) {
+      $(".sticky-header--cloned").addClass("active");
+      $(".sticky-header--one-page").addClass("active");
+    } else {
+      $(".sticky-header--cloned").removeClass("active");
+      $(".sticky-header--one-page").removeClass("active");
     }
 
     var scrollToTopBtn = ".scroll-to-top";
-    if (scrollToTopBtn.length) {
-      if ($(window).scrollTop() > 500) {
+    if ($(scrollToTopBtn).length) {
+      if (st > 500) {
         $(scrollToTopBtn).addClass("show");
       } else {
         $(scrollToTopBtn).removeClass("show");
