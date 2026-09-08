@@ -7344,13 +7344,17 @@ li:hover .sidebar__comments__icon {
   }
 }
 .about-one__progress__box .bar-wrap:nth-child(1) .bar {
-  background-color: #d08700;
+  background-color: #A3E635;
 }
 .about-one__progress__box .bar-wrap:nth-child(2) .bar {
-  background-color: #db8e00;
+  background-color: #B4F038;
 }
 .about-one__progress__box .bar-wrap:nth-child(3) .bar {
-  background-color: #e59400;
+  background-color: #C2F947;
+}
+.about-one__progress__box .bar__label {
+  color: #17212D;
+  font-weight: 700;
 }
 .about-one__funfact {
   display: flex;
