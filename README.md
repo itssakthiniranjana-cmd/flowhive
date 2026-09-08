@@ -34,16 +34,19 @@ A replica of the **Misiom** Digital Agency & Creative Services template in **Lig
 
 ---
 
-## 🎨 Color Palette
+## 🎨 Flowhive Color Theory & Brand Palette
 
-| Token | Hex Value | Usage |
-| :--- | :--- | :--- |
-| `--misiom-base` | `#ffa501` | Primary Brand Amber Accent, CTA Highlights, Hover Borders |
-| `--misiom-black` | `#18191c` | Primary Headings, High-Contrast Text |
-| `--misiom-text` | `#797b81` | Body Text & Paragraphs |
-| `--misiom-white` | `#ffffff` | Background & Clean Surface Cards |
-| `--misiom-white2` | `#f1f3f5` | Subtle Section Backgrounds & Form Inputs |
-| `--misiom-border-color` | `#e1e2e7` | Card Borders & Dividers |
+The website visual system directly reflects the **Flowhive - Supply Chain Solutions** identity:
+
+| Token | Hex Value | Color Swatch | Usage & Psychology |
+| :--- | :--- | :--- | :--- |
+| `--misiom-base` / `--flowhive-blue` | `#0084ff` | 🟦 Electric Azure | **Primary Brand Color**: Primary CTAs, active states, glowing links, navigation highlights. Represents precision, technological intelligence, and modern supply chain flow. |
+| `--flowhive-lime` | `#76d800` | 🟩 Vibrant Lime | **Energy Accent**: Sub-droplet accent, vibrant badges, and linear gradient highlights (`#0084ff` -> `#76d800`). Symbolizes efficiency, speed, and continuous growth. |
+| `--misiom-black` | `#233142` | ⬛ Deep Charcoal Navy | **Headings & High-Contrast Typography**: Matches the exact deep slate tone of the `flowhive` wordmark. |
+| `--misiom-text` | `#5e6d82` | 🔘 Slate Gray | **Body Typography**: Soft readability matching the `Supply Chain Solutions` descriptor tone. |
+| `--misiom-white` | `#ffffff` | ⬜ Pure White | **Primary Surface**: Clean background for high-contrast light mode cards. |
+| `--misiom-white2` | `#f4f7fa` | ◽ Cool Off-White | **Section Contrast**: Subtle backgrounds for feature blocks and alternating rows. |
+| `--misiom-border-color` | `#e2e8f0` | ◽ Soft Border | **Dividers & Card Outlines**: Ultra-clean crisp container framing. |
 
 ---
 
