@@ -595,11 +595,11 @@
       });
 
       tl.to([btn, text, serial, title], {
-        y: 100,
+        y: 30,
         opacity: 0,
-        duration: 0.6,
+        duration: 0.3,
         ease: "power2.in",
-        stagger: 0.05,
+        stagger: 0.02,
       });
 
       tl.to(
@@ -609,7 +609,7 @@
           left: itemRect.left - containerRect.left,
           width: itemRect.width,
           height: itemRect.height,
-          duration: 0.9,
+          duration: 0.55,
           ease: "power3.inOut",
         },
         "-=0.1",
@@ -654,36 +654,36 @@
         left: 0,
         width: containerRect.width,
         height: containerRect.height,
-        duration: 0.9,
-        ease: "power4.inOut",
+        duration: 0.7,
+        ease: "power3.out",
       });
 
       tl.fromTo(
         hoverEl.querySelectorAll(".portfolio-one__hover__title"),
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
-        "-=0.4",
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+        "-=0.35",
       );
 
       tl.fromTo(
         hoverEl.querySelectorAll(".portfolio-one__hover__serial"),
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
+        { y: 40, opacity: 0, scale: 0.85 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)" },
         "-=0.3",
       );
 
       tl.fromTo(
         hoverEl.querySelectorAll(".portfolio-one__hover__text"),
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
-        "-=0.2",
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+        "-=0.25",
       );
 
       tl.fromTo(
         hoverEl.querySelectorAll(".portfolio-one__hover__btn"),
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
-        "-=0.1",
+        { y: 40, opacity: 0, scale: 0.9 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)" },
+        "-=0.2",
       );
     }
 
