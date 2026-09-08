@@ -14398,3 +14398,255 @@ li:hover .sidebar__comments__icon {
 .job-form__submit:hover {
   background-color: #233142;
 }
+
+/* ==========================================================================
+   FLOWHIVE COMPREHENSIVE MOBILE RESPONSIVENESS & TOUCH OPTIMIZATIONS
+   ========================================================================== */
+
+/* 1. Global Viewport & Overflow Containment */
+html,
+body,
+.page-wrapper,
+#smooth-wrapper,
+#smooth-content {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  width: 100%;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 2. Responsive Typography Scaling */
+.section-title__title,
+.hero-one__title,
+.hero-two__title,
+.page-header__title,
+.blog-details__title,
+.team-details__name,
+.about-one__title,
+.service-details__title {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 767px) {
+  .section-title__title {
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+  }
+  .page-header__title {
+    font-size: 36px !important;
+  }
+  .page-header {
+    padding: 140px 0 70px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-one__title {
+    font-size: 32px !important;
+    line-height: 1.22 !important;
+  }
+  .hero-one__sub-title {
+    font-size: 14px !important;
+  }
+  .hero-one__btn-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero-one__btn-box .misiom-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  .section-title__title {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+  .page-header__title {
+    font-size: 28px !important;
+  }
+  .page-header {
+    padding: 120px 0 50px !important;
+  }
+}
+
+/* 3. Header & Navigation Mobile Optimizations */
+@media (max-width: 767px) {
+  .main-header {
+    top: 15px;
+  }
+  .main-header__right {
+    padding: 10px 18px;
+  }
+  .main-header .sidebar-btn__toggler {
+    margin-left: 20px;
+  }
+  .main-header__logo img {
+    max-width: 135px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    top: 12px;
+  }
+  .main-header__right {
+    padding: 8px 14px;
+    gap: 12px;
+  }
+  .main-header .sidebar-btn__toggler {
+    margin-left: 14px;
+  }
+  .main-header__logo img {
+    max-width: 120px;
+  }
+}
+
+/* Mobile Drawer Improvements */
+.mobile-nav__content {
+  max-width: 85vw;
+  -webkit-overflow-scrolling: touch;
+}
+.mobile-nav__close {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+.mobile-nav__content .main-menu__list li a button {
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 6px;
+  touch-action: manipulation;
+}
+
+/* 4. Careers Page Mobile Optimizations */
+@media (max-width: 767px) {
+  .job-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+  .job-filter__btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 50px;
+  }
+  .job-card {
+    padding: 20px;
+  }
+  .job-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .job-card__actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .job-card__details {
+    padding: 20px;
+  }
+  .job-card__details-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .job-modal__content {
+    width: 94vw;
+    max-height: 88vh;
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+  .job-modal__title {
+    font-size: 20px;
+  }
+  .job-form__input,
+  .job-form__textarea,
+  .job-form__select {
+    font-size: 16px; /* Prevents auto-zoom on iOS */
+    padding: 10px 14px;
+  }
+  .job-card__meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .job-card__badge {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}
+
+/* 5. Team Details Mobile Optimizations */
+@media (max-width: 767px) {
+  .team-details__inner {
+    flex-direction: column;
+  }
+  .team-details__image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 30px;
+  }
+  .team-details__title-box {
+    text-align: center;
+  }
+  .team-details__social {
+    justify-content: center;
+  }
+}
+
+/* 6. Tables & Checkout Responsiveness */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+}
+@media (max-width: 575px) {
+  .cart-page__table th,
+  .cart-page__table td {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+  .cart-page__table .product-thumbnail img {
+    max-width: 50px;
+    height: auto;
+  }
+  .checkout-page__order-table thead tr th,
+  .checkout-page__order-table tbody tr td {
+    font-size: 14px;
+  }
+}
+
+/* 7. Footer Mobile Cleanliness */
+@media (max-width: 767px) {
+  .main-footer__middle {
+    padding-bottom: 40px;
+  }
+  .footer-widget {
+    margin-bottom: 35px;
+  }
+  .main-footer__bottom__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
