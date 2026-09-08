@@ -711,6 +711,21 @@
         }
       };
     });
+
+    mm.add("(max-width: 991px)", () => {
+      const items = document.querySelectorAll(".portfolio-one .item");
+      items.forEach((item) => {
+        item.addEventListener("click", () => {
+          const link = item.querySelector(".portfolio-one__hover__title a, .portfolio-one__item__title a, a[href]");
+          if (link) {
+            const href = link.getAttribute("href");
+            if (href && href !== "#") {
+              window.location.href = href;
+            }
+          }
+        });
+      });
+    });
   }
 
   // portfolio panel pin scrolling

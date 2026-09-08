@@ -11148,6 +11148,23 @@ li:hover .sidebar__comments__icon {
   background: linear-gradient(to right, currentcolor 0%, currentcolor 100%) 0px 95%/0px 1px no-repeat;
   transition: all 400ms ease;
 }
+@media (max-width: 991px) {
+  .portfolio-one__hover__title a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .portfolio-one .item,
+  .portfolio-one__hover,
+  .portfolio-one__item {
+    cursor: pointer;
+  }
+}
 .portfolio-one__hover__title a:hover {
   background-size: 100% 1px;
   color: var(--misiom-base, #0072CE);
@@ -11172,13 +11189,18 @@ li:hover .sidebar__comments__icon {
     font-size: 14px !important;
     line-height: 1.55 !important;
     padding: 12px 16px !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 0px !important;
   }
 }
 .portfolio-one__hover__btn {
   position: relative;
   z-index: 9999;
   pointer-events: auto;
+}
+@media (max-width: 991px) {
+  .portfolio-one__hover__btn {
+    display: none !important;
+  }
 }
 .portfolio-one__hover .misiom-btn,
 .portfolio-one__hover__btn a.misiom-btn {
