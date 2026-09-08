@@ -14487,7 +14487,8 @@ canvas {
 }
 
 /* 3. Header & Navigation Mobile Optimizations */
-@media (max-width: 991px) {
+/* 3. Header & Navigation Hero & Mobile Optimizations */
+@media (max-width: 1199px) {
   .main-header {
     top: 15px !important;
     position: absolute !important;
@@ -14495,13 +14496,14 @@ canvas {
     z-index: 999 !important;
   }
   .main-header__container {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
   .main-header__inner {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
+    width: 100% !important;
   }
   .main-header__left {
     gap: 0 !important;
@@ -14524,7 +14526,7 @@ canvas {
     display: none !important;
   }
   .main-header .sidebar-btn__toggler {
-    display: none !important; /* Hide secondary sidebar toggler on mobile to make hamburger cleanly centered */
+    display: none !important;
   }
   .mobile-nav__btn {
     display: flex !important;
@@ -14558,11 +14560,32 @@ canvas {
   .main-header {
     top: 10px !important;
   }
+  .main-header__container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
   .main-header__logo img {
     max-width: 120px !important;
   }
   .main-header__right {
     padding: 6px 12px !important;
+  }
+}
+
+/* Hero section spacing below header */
+@media (max-width: 1199px) {
+  .hero-one {
+    padding: 140px 0 80px !important;
+  }
+}
+@media (max-width: 767px) {
+  .hero-one {
+    padding: 120px 0 60px !important;
+  }
+}
+@media (max-width: 480px) {
+  .hero-one {
+    padding: 100px 0 50px !important;
   }
 }
 
