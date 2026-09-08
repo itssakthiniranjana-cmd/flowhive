@@ -40,9 +40,9 @@ The website visual system directly reflects the **Flowhive - Supply Chain Soluti
 
 | Token | Hex Value | Color Swatch | Usage & Psychology |
 | :--- | :--- | :--- | :--- |
-| `--misiom-base` / `--flowhive-blue` | `#0084ff` | 🟦 Electric Azure | **Primary Brand Color**: Primary CTAs, active states, glowing links, navigation highlights. Represents precision, technological intelligence, and modern supply chain flow. |
-| `--flowhive-lime` | `#76d800` | 🟩 Vibrant Lime | **Energy Accent**: Sub-droplet accent, vibrant badges, and linear gradient highlights (`#0084ff` -> `#76d800`). Symbolizes efficiency, speed, and continuous growth. |
-| `--misiom-black` | `#233142` | ⬛ Deep Charcoal Navy | **Headings & High-Contrast Typography**: Matches the exact deep slate tone of the `flowhive` wordmark. |
+| `--misiom-base` / `--flowhive-lime` | `#C2F947` | 🟩 Electric Lime | **Primary Accent**: Primary CTA buttons, interactive hover borders, active navigation links, slider pagination, animated icons, and focus highlights. High-energy vibrant cyber lime green. |
+| `--flowhive-blue` | `#0084FF` | 🟦 Electric Azure | **Secondary Tech Accent**: Complements the lime accent matching the logo droplet transition (`#0084FF` ➔ `#C2F947`). |
+| `--misiom-black` | `#233142` | ⬛ Deep Charcoal Navy | **Headings & High-Contrast Typography**: Matches the deep slate tone of the `flowhive` wordmark. |
 | `--misiom-text` | `#5e6d82` | 🔘 Slate Gray | **Body Typography**: Soft readability matching the `Supply Chain Solutions` descriptor tone. |
 | `--misiom-white` | `#ffffff` | ⬜ Pure White | **Primary Surface**: Clean background for high-contrast light mode cards. |
 | `--misiom-white2` | `#f4f7fa` | ◽ Cool Off-White | **Section Contrast**: Subtle backgrounds for feature blocks and alternating rows. |
