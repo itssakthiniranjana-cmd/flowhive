@@ -2665,22 +2665,11 @@ One Line To Left */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .main-header__left {
   display: flex;
-  gap: 100px;
   align-items: center;
-}
-@media (max-width: 1499px) {
-  .main-header__left {
-    gap: 60px;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1299px) {
-  .main-header__left {
-    width: 100%;
-    justify-content: space-between;
-  }
 }
 @media (max-width: 375px) {
   .main-header__logo {
@@ -2701,6 +2690,15 @@ One Line To Left */
   border: 1px solid #E2E8F0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
+@media (min-width: 1200px) {
+  .main-header__nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+}
 @media (max-width: 1199px) {
   .main-header__nav {
     display: none;
@@ -2715,11 +2713,6 @@ One Line To Left */
   background-color: #F4F7FA;
   border: 1px solid #E2E8F0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-@media (min-width: 1200px) and (max-width: 1299px) {
-  .main-header__right {
-    display: none;
-  }
 }
 .main-header__search {
   display: flex;
